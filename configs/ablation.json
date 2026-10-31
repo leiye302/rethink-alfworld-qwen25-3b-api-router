@@ -1,0 +1,17 @@
+{
+  "schema": "alfworld_rethink_ablation_v1",
+  "variant": "external_api_router",
+  "base_model": "Qwen/Qwen2.5-3B-Instruct",
+  "base_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+  "sft_enabled": false,
+  "opsd_initialization": "pinned_base_without_Route_SFT",
+  "teacher_hint_route": "external_H_R_API",
+  "API_at_evaluation": false,
+  "mother_repository": "https://github.com/leiye302/rethink-alfworld-qwen25-1.5b",
+  "mother_commit": "93e1341ffab835c21ed622ac80793fc1fb7f1487",
+  "mother_source_archive_sha256": "f94235430529c322fc781778288c81a664c830d7660c927dd2a16ca3d50e15d2",
+  "science_reference": "configs/reference_3b.json",
+  "GPU_training_executed": false,
+  "API_quality_calibrated": false,
+  "paid_API_calls_during_preparation": 0
+}

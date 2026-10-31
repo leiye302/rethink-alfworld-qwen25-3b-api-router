@@ -1,0 +1,268 @@
+{
+  "schema": "frozen_3b_recipe_reference_v1",
+  "source_data_verified": true,
+  "evidence_scope": "Archived public 3B recipe; not a claim of bitwise-identical GPU trajectories.",
+  "sft": {
+    "schema": "route_semantic_bce_sft_v1",
+    "base_model": "Qwen/Qwen2.5-3B-Instruct",
+    "base_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "parent_dir": "models/Qwen2.5-3B-Instruct",
+    "data_dir": "data_v1",
+    "output_dir": "outputs/route_bce_5g3b_lambda01_seed0_ep2_v1",
+    "route_lambda": 0.1,
+    "suffix_ce_weight": 1.0,
+    "reference_kl_coef": 0.0,
+    "loss_reduction": "sample_mean",
+    "global_batch_size": 8,
+    "good_per_batch": 5,
+    "bad_per_batch": 3,
+    "micro_batch_size": 1,
+    "epochs": 2,
+    "total_steps": 4000,
+    "lr": 2e-06,
+    "betas": [
+      0.9,
+      0.95
+    ],
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.1,
+    "scheduler": "cosine",
+    "clip_grad": 1.0,
+    "seed": 0,
+    "max_length": 8192,
+    "truncation": "error",
+    "full_parameter_training": true,
+    "lora_rank": 0,
+    "attention_backend": "sdpa",
+    "gradient_checkpointing": true,
+    "parameter_dtype": "float32",
+    "autocast_dtype": "bfloat16",
+    "eval_every": 100,
+    "eval_at_step_zero": true,
+    "eval_rows": 256,
+    "generation_every": 500,
+    "generation_at_step_zero": true,
+    "generation_rows": 32,
+    "generation_max_new_tokens": 512,
+    "generation_temperature": 0.0,
+    "generation_assistant_prefix": "",
+    "generation_skip_special_tokens": false,
+    "checkpoint_every": 500,
+    "full_resume_checkpoint_steps": [
+      2000,
+      4000
+    ],
+    "remote_retention": "retain_latest_two_after_verified_archive",
+    "local_retention": "user_managed_verified_checkpoint_archive",
+    "resume_state_policy": "versioned_atomic_pointer_latest_only_plus_epoch_full_states",
+    "best_checkpoint_policy": "best_eval_loss_among_saved_500step_checkpoints",
+    "automatic_early_stop": false,
+    "trigger_rate_gate": false,
+    "automatic_opsd": false,
+    "requires_explicit_gpu_launch": true,
+    "prepared_world_size": 1,
+    "minimum_gpu_memory_gib": 70,
+    "minimum_host_memory_gib": 48
+  },
+  "opsd": {
+    "defaults": [
+      "ppo_trainer",
+      "_self_"
+    ],
+    "algorithm": {
+      "adv_estimator": "grpo",
+      "use_kl_in_reward": false,
+      "sdar": {
+        "sdar_coef": 0.01,
+        "gate_beta": 5.0,
+        "skills_dir": "skills/alfworld",
+        "skill_all": false
+      },
+      "local_hints": {
+        "enabled": true,
+        "backend": "go_glm_episode",
+        "run_root": "${trainer.default_local_dir}/local_hints",
+        "analyzer_path": "unused_api_backend",
+        "identity_files": {},
+        "device": "",
+        "api_auth_file": null,
+        "api_max_usd": 0.0
+      }
+    },
+    "data": {
+      "train_files": null,
+      "val_files": null,
+      "train_batch_size": 16,
+      "val_batch_size": 140,
+      "max_prompt_length": 2048,
+      "max_response_length": 512,
+      "filter_overlong_prompts": true,
+      "truncation": "error",
+      "return_raw_chat": true
+    },
+    "actor_rollout_ref": {
+      "model": {
+        "path": null,
+        "use_remove_padding": true,
+        "enable_gradient_checkpointing": true,
+        "enable_activation_offload": false,
+        "use_fused_kernels": true,
+        "fused_kernel_options": {
+          "impl_backend": "torch"
+        }
+      },
+      "actor": {
+        "optim": {
+          "lr": 1e-06
+        },
+        "ppo_mini_batch_size": 256,
+        "ppo_micro_batch_size_per_gpu": 32,
+        "ppo_epochs": 1,
+        "loss_agg_mode": "token-mean",
+        "use_kl_loss": true,
+        "kl_loss_coef": 0.01,
+        "kl_loss_type": "low_var_kl",
+        "entropy_coeff": 0.001,
+        "use_invalid_action_penalty": true,
+        "invalid_action_penalty_coef": 0.1,
+        "fsdp_config": {
+          "param_offload": false,
+          "optimizer_offload": false
+        }
+      },
+      "rollout": {
+        "log_prob_micro_batch_size_per_gpu": 32,
+        "tensor_model_parallel_size": 1,
+        "name": "vllm",
+        "gpu_memory_utilization": 0.3,
+        "enable_chunked_prefill": false,
+        "enforce_eager": true,
+        "free_cache_engine": true,
+        "temperature": 1.0,
+        "top_p": 1.0,
+        "top_k": -1,
+        "val_kwargs": {
+          "temperature": 0.4,
+          "do_sample": true,
+          "n": 1
+        }
+      },
+      "ref": {
+        "log_prob_micro_batch_size_per_gpu": 32,
+        "fsdp_config": {
+          "param_offload": true
+        }
+      }
+    },
+    "reward_model": {
+      "model": {
+        "use_fused_kernels": false
+      }
+    },
+    "env": {
+      "env_name": "alfworld/AlfredTWEnv",
+      "seed": 0,
+      "max_steps": 50,
+      "history_length": 2,
+      "rollout": {
+        "n": 8
+      },
+      "resources_per_worker": {
+        "num_cpus": 1
+      },
+      "alfworld": {
+        "worker_pool_size": 16,
+        "eval_dataset": "eval_in_distribution",
+        "fixed_eval_manifest": null
+      }
+    },
+    "trainer": {
+      "critic_warmup": 0,
+      "logger": [
+        "console"
+      ],
+      "project_name": "rethink_public",
+      "experiment_name": "route_bce_sdar_hint",
+      "n_gpus_per_node": 1,
+      "nnodes": 1,
+      "total_epochs": 150,
+      "total_training_steps": 150,
+      "val_before_train": true,
+      "test_freq": 10,
+      "save_freq": 20,
+      "durable_recovery": false,
+      "max_actor_ckpt_to_keep": 2,
+      "max_critic_ckpt_to_keep": 2,
+      "del_local_ckpt_after_load": false,
+      "default_local_dir": null,
+      "resume_mode": "auto",
+      "ray_wait_register_center_timeout": 600
+    },
+    "ray_init": {
+      "num_cpus": 22,
+      "object_store_memory": 2147483648,
+      "_temp_dir": null
+    }
+  },
+  "source_sha256_lf": {
+    "src/sft/route_bce/core.py": "634806f26c2f9a859523ead6707c89eb125c83715153d0dd48c6a204b07c119f",
+    "src/sft/route_bce/preflight.py": "90db3b6aa0fb990317c33e2b07e38adf7601e97fe009b2dcd94b5b8adeba9751",
+    "src/sft/legacy/stage1_training.py": "26fa0b464eafb02622efc5ace7e8f22858d45080681d9dbeab73e30988c6f23b",
+    "src/sft/legacy/sft_dataset.py": "42272b2bce2ea1498f6a21ab729ecdb461528a29f20122cd84f9c21aab664846",
+    "src/sft/legacy/rethink_token.py": "6997bc8b357be62e02053580f5540cccb1d52a831aa482cf43c4a2fb095eb404",
+    "src/data/build_dataset.py": "4e62177b096c9e17659a9bbd8077e28a10cfad6208cf450d0382d0c6bf387022",
+    "src/data/action_targets.py": "4174d31b245cb3593ee950e1dd07ed77caae0677b2aae5b2c49428e85b73cc74",
+    "src/data/prompts/hr_review.txt": "1af9bcf806ee0dc12e0719b0b7202f8a1382463158c36f654aa0b4b8c31c162b",
+    "src/data/prompts/hr_calibration_examples.txt": "5bef6eea29e2e5a3559c3b6b8f7dff535a531c572e109946615aee73fffd59f2",
+    "src/data/prompts/local_hint_system.txt": "cc2cbc4f33099c278291e6044b195ae31427e7510bdce4f9cc29b3f7abed4fce"
+  },
+  "sdar_sha256_lf": {
+    "verl/trainer/ppo/core_algos.py": "5043f97b87b00ab5c5d907022ea6cf148b935fdb71c37222a3f9c33ccfaf1dc6",
+    "verl/trainer/ppo/sdar_utils.py": "329ee3a73e05d3ab9817dd59d69394dd6ba3df85ca9abe9ddebc0e2c2682ad68",
+    "verl/workers/actor/dp_actor.py": "5f6246d807cab4e7abc3314ac026348ec6d7bd5e50788a2da67ac0b7495af221",
+    "verl/trainer/ppo/rethink_api_protocol.py": "ce4c90a088aff29173514fb08f6a8b8966c2b7f39eb0ad2202f9d91380eed539",
+    "verl/trainer/ppo/rethink_local_hints.py": "49fcc0f0ff6ad141618aaa09bc4320e3d7eb98019cf4242f7ca07cc638be56ef",
+    "verl/trainer/ppo/skillsd_ray_trainer.py": "0ed90fef6cac7b20747caf4e24ca8743c534326a6e128ab55cac00af55f6da7f",
+    "agent_system/multi_turn_rollout/rollout_loop.py": "c112f9331965e7470d1553da79496049893e2ad5f6db49233a721dec17b112e7",
+    "agent_system/environments/env_package/alfworld/projection.py": "e794d1217d613ef4b550cfe4bfd0b39b4deb10d47493f31f78aef7b5ebf6dd98"
+  },
+  "evaluation_manifest_sha256_lf": "bb3a1d67751b04ef0d03bcba0bd4b7c97d98f86ebcf20160985918256f957cb8",
+  "evaluation_protocol": {
+    "benchmark": "ALFWorld",
+    "split": "valid_seen",
+    "tasks": 140,
+    "task_manifest": "tasks_seen140.json",
+    "seed_base": 2026,
+    "max_steps": 50,
+    "history_length": 2,
+    "max_prompt_tokens": 2048,
+    "max_response_tokens": 512,
+    "temperature": 0.4,
+    "top_p": 1.0,
+    "top_k": -1,
+    "rollouts_per_task": 1,
+    "do_sample": true,
+    "hint_or_analyzer_at_evaluation": false,
+    "skip_special_tokens_for_telemetry": false,
+    "aggregation": "successes/140; six-family macro separate"
+  },
+  "frozen_data_lock": {
+    "train_counts": {
+      "bad": 6000,
+      "good": 10000
+    },
+    "val_counts": {
+      "bad": 128,
+      "good": 128
+    },
+    "files": {
+      "route_sft/excluded.jsonl": "38cca28fb8ffcad2d5c7f1257191400c9a4109dfe82549611f182f1465b69ebe",
+      "route_sft/generation_val32.jsonl": "528803ea31cea53a60a6bb0e0c83e7e2903ae6a13d2f06523785b82b43cf4d64",
+      "route_sft/train.jsonl": "9eaca5a3de47e2b173a4efb75c8dcf4822a4a49ecde129e6770d9739f7112ecb",
+      "route_sft/val.jsonl": "ecbaffe47d13d11d35ec4449e2e606fd24fe9a7aa0a4150081652adbc71dc678",
+      "route_sft/manifest.json": "2d33d11e7ee27f1155e9d455d0d085b7c5b75741fc9cdd34ca9ef627e057b9aa",
+      "reviewed_pool.jsonl.gz": "26901fe70198149420e898458d85ccd56a93d3bd1771909815ab1e057b6d4f87",
+      "selection_ids.json": "25b4cddbf1c4bbfdb18676688182538a9a0da22eb0731d142fc4e339d2bd88b3"
+    }
+  }
+}

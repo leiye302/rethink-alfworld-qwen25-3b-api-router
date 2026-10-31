@@ -1,0 +1,19 @@
+{
+  "train_counts": {
+    "bad": 6000,
+    "good": 10000
+  },
+  "val_counts": {
+    "bad": 128,
+    "good": 128
+  },
+  "files": {
+    "route_sft/excluded.jsonl": "38cca28fb8ffcad2d5c7f1257191400c9a4109dfe82549611f182f1465b69ebe",
+    "route_sft/generation_val32.jsonl": "528803ea31cea53a60a6bb0e0c83e7e2903ae6a13d2f06523785b82b43cf4d64",
+    "route_sft/train.jsonl": "9eaca5a3de47e2b173a4efb75c8dcf4822a4a49ecde129e6770d9739f7112ecb",
+    "route_sft/val.jsonl": "ecbaffe47d13d11d35ec4449e2e606fd24fe9a7aa0a4150081652adbc71dc678",
+    "route_sft/manifest.json": "2d33d11e7ee27f1155e9d455d0d085b7c5b75741fc9cdd34ca9ef627e057b9aa",
+    "reviewed_pool.jsonl.gz": "26901fe70198149420e898458d85ccd56a93d3bd1771909815ab1e057b6d4f87",
+    "selection_ids.json": "25b4cddbf1c4bbfdb18676688182538a9a0da22eb0731d142fc4e339d2bd88b3"
+  }
+}

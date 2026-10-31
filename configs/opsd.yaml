@@ -1,0 +1,127 @@
+defaults:
+- ppo_trainer
+- _self_
+algorithm:
+  adv_estimator: grpo
+  use_kl_in_reward: false
+  sdar:
+    sdar_coef: 0.01
+    gate_beta: 5.0
+    skills_dir: skills/alfworld
+    skill_all: false
+  local_hints:
+    enabled: true
+    backend: go_glm_episode
+    run_root: ${trainer.default_local_dir}/local_hints
+    analyzer_path: unused_api_backend
+    identity_files: {}
+    device: ''
+    api_auth_file: null
+    api_max_usd: 0.0
+  external_router:
+    enabled: true
+    model: glm-5.3-flash
+    run_root: ${trainer.default_local_dir}/external_router
+    concurrency: 4
+    max_new_tokens: 384
+    temperature: 0.0
+    invalid_reasoning_policy: uncertain
+    evaluation_enabled: false
+    api_auth_file: null
+data:
+  train_files: null
+  val_files: null
+  train_batch_size: 16
+  val_batch_size: 140
+  max_prompt_length: 2048
+  max_response_length: 512
+  filter_overlong_prompts: true
+  truncation: error
+  return_raw_chat: true
+actor_rollout_ref:
+  model:
+    path: null
+    use_remove_padding: true
+    enable_gradient_checkpointing: true
+    enable_activation_offload: false
+    use_fused_kernels: true
+    fused_kernel_options:
+      impl_backend: torch
+  actor:
+    optim:
+      lr: 1.0e-06
+    ppo_mini_batch_size: 256
+    ppo_micro_batch_size_per_gpu: 32
+    ppo_epochs: 1
+    loss_agg_mode: token-mean
+    use_kl_loss: true
+    kl_loss_coef: 0.01
+    kl_loss_type: low_var_kl
+    entropy_coeff: 0.001
+    use_invalid_action_penalty: true
+    invalid_action_penalty_coef: 0.1
+    fsdp_config:
+      param_offload: false
+      optimizer_offload: false
+  rollout:
+    log_prob_micro_batch_size_per_gpu: 32
+    tensor_model_parallel_size: 1
+    name: vllm
+    gpu_memory_utilization: 0.3
+    enable_chunked_prefill: false
+    enforce_eager: true
+    free_cache_engine: true
+    temperature: 1.0
+    top_p: 1.0
+    top_k: -1
+    val_kwargs:
+      temperature: 0.4
+      do_sample: true
+      n: 1
+  ref:
+    log_prob_micro_batch_size_per_gpu: 32
+    fsdp_config:
+      param_offload: true
+reward_model:
+  model:
+    use_fused_kernels: false
+env:
+  env_name: alfworld/AlfredTWEnv
+  seed: 0
+  max_steps: 50
+  history_length: 2
+  rollout:
+    n: 8
+  resources_per_worker:
+    num_cpus: 1
+  alfworld:
+    worker_pool_size: 16
+    eval_dataset: eval_in_distribution
+    fixed_eval_manifest: null
+trainer:
+  critic_warmup: 0
+  logger:
+  - console
+  project_name: rethink_public
+  experiment_name: external_api_router
+  n_gpus_per_node: 1
+  nnodes: 1
+  total_epochs: 150
+  total_training_steps: 150
+  val_before_train: true
+  test_freq: 10
+  save_freq: 20
+  durable_recovery: false
+  max_actor_ckpt_to_keep: 2
+  max_critic_ckpt_to_keep: 2
+  del_local_ckpt_after_load: false
+  default_local_dir: null
+  resume_mode: auto
+  ray_wait_register_center_timeout: 600
+ray_init:
+  address: local
+  num_gpus: 1
+  include_dashboard: false
+  num_cpus: 22
+  object_store_memory: 2147483648
+  _temp_dir: null

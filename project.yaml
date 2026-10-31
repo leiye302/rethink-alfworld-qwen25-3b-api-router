@@ -1,0 +1,14 @@
+name: alfworld-qwen25-3b-rethink-ablation
+owner: null
+stage: preparation
+backbone: Qwen/Qwen2.5-3B-Instruct
+variant: see configs/ablation.json
+benchmark: ALFWorld valid_seen140
+metric: task_success_rate
+training_updates: 150
+gate_beta: 5
+evaluation_uses_API: false
+GPU_training_executed: false
+API_quality_calibrated: false
+best_result: null
+next_milestone: Verify GPU runtime and real API quality before explicit training launch

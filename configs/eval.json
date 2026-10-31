@@ -1,0 +1,19 @@
+{
+  "benchmark": "ALFWorld",
+  "split": "valid_seen",
+  "tasks": 140,
+  "task_manifest": "seen140_tasks.json",
+  "seed_base": 2026,
+  "max_steps": 50,
+  "history_length": 2,
+  "max_prompt_tokens": 2048,
+  "max_response_tokens": 512,
+  "temperature": 0.4,
+  "top_p": 1.0,
+  "top_k": -1,
+  "rollouts_per_task": 1,
+  "do_sample": true,
+  "hint_or_analyzer_at_evaluation": false,
+  "skip_special_tokens_for_telemetry": false,
+  "aggregation": "successes/140; six-family macro separate"
+}

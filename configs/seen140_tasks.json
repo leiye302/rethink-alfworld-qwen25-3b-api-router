@@ -1,0 +1,982 @@
+[
+  {
+    "index": 0,
+    "task_id": "json_2.1.1/valid_seen/look_at_obj_in_light-AlarmClock-None-DeskLamp-323/trial_T20190909_044715_250790/game.tw-pddl",
+    "seed": 2026,
+    "game_sha256": "cc1bd653b87a7371f7bcd951dd90743d4ad08db8ad1584a3be2e6163b07d0dd0",
+    "split": "valid_seen"
+  },
+  {
+    "index": 1,
+    "task_id": "json_2.1.1/valid_seen/look_at_obj_in_light-Bowl-None-DeskLamp-301/trial_T20190909_150719_492274/game.tw-pddl",
+    "seed": 2027,
+    "game_sha256": "b678fd904e5d413c2b195239ee467cd9c9a2a2fcb6cdac77c5cad591a73c6de3",
+    "split": "valid_seen"
+  },
+  {
+    "index": 2,
+    "task_id": "json_2.1.1/valid_seen/look_at_obj_in_light-Bowl-None-DeskLamp-316/trial_T20190908_230702_962704/game.tw-pddl",
+    "seed": 2028,
+    "game_sha256": "72176a87fab004089b00c81006bde25dd02767e0bf24ac46e77889d88526d892",
+    "split": "valid_seen"
+  },
+  {
+    "index": 3,
+    "task_id": "json_2.1.1/valid_seen/look_at_obj_in_light-Box-None-DeskLamp-205/trial_T20190907_074425_330493/game.tw-pddl",
+    "seed": 2029,
+    "game_sha256": "ae2a20da2e4a473b8a8e2893e7ee2a06a1f955737b2d8f010970d940ca823fd8",
+    "split": "valid_seen"
+  },
+  {
+    "index": 4,
+    "task_id": "json_2.1.1/valid_seen/look_at_obj_in_light-CD-None-DeskLamp-302/trial_T20190907_154618_526741/game.tw-pddl",
+    "seed": 2030,
+    "game_sha256": "dbe0e0cc7b1c20680573cf051f64587d4895b365dda0f6c84f4a5454460429a3",
+    "split": "valid_seen"
+  },
+  {
+    "index": 5,
+    "task_id": "json_2.1.1/valid_seen/look_at_obj_in_light-CD-None-DeskLamp-314/trial_T20190907_114323_767231/game.tw-pddl",
+    "seed": 2031,
+    "game_sha256": "f4c48d6af8104c614c166991df0045831d81a74bd034da004cb954c3382bf3bd",
+    "split": "valid_seen"
+  },
+  {
+    "index": 6,
+    "task_id": "json_2.1.1/valid_seen/look_at_obj_in_light-CD-None-DeskLamp-320/trial_T20190907_224451_655673/game.tw-pddl",
+    "seed": 2032,
+    "game_sha256": "3d484d5545d0cc32dcca4f10ffce5e055001722aa7ea49df8addf3d913996c65",
+    "split": "valid_seen"
+  },
+  {
+    "index": 7,
+    "task_id": "json_2.1.1/valid_seen/look_at_obj_in_light-KeyChain-None-DeskLamp-327/trial_T20190906_202601_548273/game.tw-pddl",
+    "seed": 2033,
+    "game_sha256": "a327941eb42974c2e787cd5522dd7ab198a1452c18ac716b7094a30b7020de61",
+    "split": "valid_seen"
+  },
+  {
+    "index": 8,
+    "task_id": "json_2.1.1/valid_seen/look_at_obj_in_light-Laptop-None-DeskLamp-328/trial_T20190908_201550_622420/game.tw-pddl",
+    "seed": 2034,
+    "game_sha256": "3e234ea52fc2598772e333f8d095a80f15d80958b08382329c5dd3f5451a11b5",
+    "split": "valid_seen"
+  },
+  {
+    "index": 9,
+    "task_id": "json_2.1.1/valid_seen/look_at_obj_in_light-Pillow-None-DeskLamp-302/trial_T20190909_150916_682139/game.tw-pddl",
+    "seed": 2035,
+    "game_sha256": "474edd87498404161c26d4e411f0df03385eb283cdd2c4e07c232c081b3bebf3",
+    "split": "valid_seen"
+  },
+  {
+    "index": 10,
+    "task_id": "json_2.1.1/valid_seen/look_at_obj_in_light-Pillow-None-DeskLamp-323/trial_T20190908_053153_077977/game.tw-pddl",
+    "seed": 2036,
+    "game_sha256": "4a2d09b3a7eba449f42984bd4c9550e2ec10e63e711941bb932eb5e49f7e0bb4",
+    "split": "valid_seen"
+  },
+  {
+    "index": 11,
+    "task_id": "json_2.1.1/valid_seen/look_at_obj_in_light-Statue-None-DeskLamp-216/trial_T20190909_193045_208933/game.tw-pddl",
+    "seed": 2037,
+    "game_sha256": "1c61023e3a9fa4ae6429a4be324d44e80cabf0b933cbecd757fce3225ebb17d5",
+    "split": "valid_seen"
+  },
+  {
+    "index": 12,
+    "task_id": "json_2.1.1/valid_seen/look_at_obj_in_light-Vase-None-DeskLamp-303/trial_T20190907_150418_457594/game.tw-pddl",
+    "seed": 2038,
+    "game_sha256": "d910277e83b829f8e53b7520adfc642ed8f3bcc22ffd007d9a994e0a375fad22",
+    "split": "valid_seen"
+  },
+  {
+    "index": 13,
+    "task_id": "json_2.1.1/valid_seen/pick_and_place_simple-Book-None-SideTable-329/trial_T20190908_050633_745514/game.tw-pddl",
+    "seed": 2039,
+    "game_sha256": "e9ced02262678598e81db73781e8979ab9297e77ea5a424b8fd580fa0452e784",
+    "split": "valid_seen"
+  },
+  {
+    "index": 14,
+    "task_id": "json_2.1.1/valid_seen/pick_and_place_simple-Book-None-Sofa-229/trial_T20190907_042856_259139/game.tw-pddl",
+    "seed": 2040,
+    "game_sha256": "07b984857e2cc9707ad6788777053f2a2e56ba95ab1e8c8ae5ca5c5def96c0b8",
+    "split": "valid_seen"
+  },
+  {
+    "index": 15,
+    "task_id": "json_2.1.1/valid_seen/pick_and_place_simple-Bowl-None-CoffeeTable-201/trial_T20190907_171639_045329/game.tw-pddl",
+    "seed": 2041,
+    "game_sha256": "e1330f34eb5fa1615d8e0814a867b0b3b87e4e2f829903928e7fe4b94d2d4e39",
+    "split": "valid_seen"
+  },
+  {
+    "index": 16,
+    "task_id": "json_2.1.1/valid_seen/pick_and_place_simple-Box-None-Dresser-224/trial_T20190907_164104_229696/game.tw-pddl",
+    "seed": 2042,
+    "game_sha256": "95b0aacdca57cac922f2fad6f2fb14e901ff3ae028d864f11cec7bdbaefc92bc",
+    "split": "valid_seen"
+  },
+  {
+    "index": 17,
+    "task_id": "json_2.1.1/valid_seen/pick_and_place_simple-Candle-None-Cart-401/trial_T20190909_081908_677973/game.tw-pddl",
+    "seed": 2043,
+    "game_sha256": "999187a23754eccd7a6c3866cbbb26b8ea8407dd81d5859b133ac14d0f02ec68",
+    "split": "valid_seen"
+  },
+  {
+    "index": 18,
+    "task_id": "json_2.1.1/valid_seen/pick_and_place_simple-Candle-None-Toilet-407/trial_T20190909_055248_059513/game.tw-pddl",
+    "seed": 2044,
+    "game_sha256": "3bfef4caa835f34555f994bf77c1611d9a11d30bafb5e38c2f1d6ca7f774831f",
+    "split": "valid_seen"
+  },
+  {
+    "index": 19,
+    "task_id": "json_2.1.1/valid_seen/pick_and_place_simple-Candle-None-Toilet-429/trial_T20190908_052232_887934/game.tw-pddl",
+    "seed": 2045,
+    "game_sha256": "5d44b36b523040947dfe66250749bc5511aacb1315c18c909b06b66809bb4f16",
+    "split": "valid_seen"
+  },
+  {
+    "index": 20,
+    "task_id": "json_2.1.1/valid_seen/pick_and_place_simple-CellPhone-None-ArmChair-318/trial_T20190909_120047_968274/game.tw-pddl",
+    "seed": 2046,
+    "game_sha256": "3a3f3e2f6a84cb77edd48a9fefc604ef9b1adbe7857f687701a4ec9327acc21c",
+    "split": "valid_seen"
+  },
+  {
+    "index": 21,
+    "task_id": "json_2.1.1/valid_seen/pick_and_place_simple-CellPhone-None-Bed-324/trial_T20190907_233817_198528/game.tw-pddl",
+    "seed": 2047,
+    "game_sha256": "3d462be1916cc11c8cdefe28c18a06c934bbbd920be17459f7860a6395ab798b",
+    "split": "valid_seen"
+  },
+  {
+    "index": 22,
+    "task_id": "json_2.1.1/valid_seen/pick_and_place_simple-CreditCard-None-ArmChair-201/trial_T20190908_124340_258012/game.tw-pddl",
+    "seed": 2048,
+    "game_sha256": "a8e51e6d39f370837b3052a1d20b00a8223898fb336a8f6bfcf4cc57b7072a2f",
+    "split": "valid_seen"
+  },
+  {
+    "index": 23,
+    "task_id": "json_2.1.1/valid_seen/pick_and_place_simple-CreditCard-None-Drawer-227/trial_T20190909_010644_297017/game.tw-pddl",
+    "seed": 2049,
+    "game_sha256": "2a265a3f256416520cded3d6eefe77b497d504f8fd05157e74eeffa2091f2789",
+    "split": "valid_seen"
+  },
+  {
+    "index": 24,
+    "task_id": "json_2.1.1/valid_seen/pick_and_place_simple-Egg-None-Microwave-4/trial_T20190906_234406_356490/game.tw-pddl",
+    "seed": 2050,
+    "game_sha256": "03a0f16c2c3cc460316449644c2bcb6313c79ed41f43f7ea998a5729edd6d9a4",
+    "split": "valid_seen"
+  },
+  {
+    "index": 25,
+    "task_id": "json_2.1.1/valid_seen/pick_and_place_simple-Knife-None-SideTable-3/trial_T20190918_184236_557252/game.tw-pddl",
+    "seed": 2051,
+    "game_sha256": "6fb9c7054aa6dfd8fac38a58e517633721de812b664e7761ffee8280ea23e474",
+    "split": "valid_seen"
+  },
+  {
+    "index": 26,
+    "task_id": "json_2.1.1/valid_seen/pick_and_place_simple-Mug-None-Dresser-311/trial_T20190909_152837_739016/game.tw-pddl",
+    "seed": 2052,
+    "game_sha256": "1d1cf0fc6b9527b62b73f0d734aed478aeea3285bc0823f1d7172cb860ba0712",
+    "split": "valid_seen"
+  },
+  {
+    "index": 27,
+    "task_id": "json_2.1.1/valid_seen/pick_and_place_simple-Mug-None-SideTable-329/trial_T20190909_032318_169393/game.tw-pddl",
+    "seed": 2053,
+    "game_sha256": "9a57ae1af513f9378feb0ce0a1892e2d67945cd31b68bdbd64ce81f555916994",
+    "split": "valid_seen"
+  },
+  {
+    "index": 28,
+    "task_id": "json_2.1.1/valid_seen/pick_and_place_simple-Mug-None-SideTable-329/trial_T20190909_032340_274147/game.tw-pddl",
+    "seed": 2054,
+    "game_sha256": "ca5eaea1444c1fc3630e6edc19825a6105544825f74d478d9f21271dab2d48f9",
+    "split": "valid_seen"
+  },
+  {
+    "index": 29,
+    "task_id": "json_2.1.1/valid_seen/pick_and_place_simple-Newspaper-None-Sofa-224/trial_T20190909_111324_949106/game.tw-pddl",
+    "seed": 2055,
+    "game_sha256": "544f3a1752fb25af1ede777bad058e1ce347e52ac94644bd25c9ea5fb2baa898",
+    "split": "valid_seen"
+  },
+  {
+    "index": 30,
+    "task_id": "json_2.1.1/valid_seen/pick_and_place_simple-Pencil-None-Desk-310/trial_T20190909_113054_894334/game.tw-pddl",
+    "seed": 2056,
+    "game_sha256": "557e97b5c8413f33333c55a5976994fcaeec42410b5376831926175e2111787b",
+    "split": "valid_seen"
+  },
+  {
+    "index": 31,
+    "task_id": "json_2.1.1/valid_seen/pick_and_place_simple-Pencil-None-Dresser-330/trial_T20190909_071128_012892/game.tw-pddl",
+    "seed": 2057,
+    "game_sha256": "f61d3f513e88639dd386f1fb09a43a66183757c1f56295ba178d4acff1831666",
+    "split": "valid_seen"
+  },
+  {
+    "index": 32,
+    "task_id": "json_2.1.1/valid_seen/pick_and_place_simple-RemoteControl-None-ArmChair-230/trial_T20190909_021000_274398/game.tw-pddl",
+    "seed": 2058,
+    "game_sha256": "1b75024d19314ed157d33c060ea24faa0a1d0590a8a7d43457acf2d6858f652c",
+    "split": "valid_seen"
+  },
+  {
+    "index": 33,
+    "task_id": "json_2.1.1/valid_seen/pick_and_place_simple-RemoteControl-None-Sofa-207/trial_T20190909_153609_373481/game.tw-pddl",
+    "seed": 2059,
+    "game_sha256": "baa57f87b19601400ae539155d2d456db1dae012ca1ff0062b3d81efb6e57613",
+    "split": "valid_seen"
+  },
+  {
+    "index": 34,
+    "task_id": "json_2.1.1/valid_seen/pick_and_place_simple-SoapBar-None-Cart-401/trial_T20190907_054906_608944/game.tw-pddl",
+    "seed": 2060,
+    "game_sha256": "88d3919d9abeba2df355a13d0e8efbff43ff76d82946ba94a545b3e4ef85d08c",
+    "split": "valid_seen"
+  },
+  {
+    "index": 35,
+    "task_id": "json_2.1.1/valid_seen/pick_and_place_simple-SoapBottle-None-Cabinet-414/trial_T20190908_110131_524518/game.tw-pddl",
+    "seed": 2061,
+    "game_sha256": "3ddb867b3b82305a55556f0bb183e93bb731786121413c1c625b9b814e3b130e",
+    "split": "valid_seen"
+  },
+  {
+    "index": 36,
+    "task_id": "json_2.1.1/valid_seen/pick_and_place_simple-SoapBottle-None-CounterTop-417/trial_T20190910_112922_368384/game.tw-pddl",
+    "seed": 2062,
+    "game_sha256": "f7129b6cb46c104ce70145a3d1d5088057643ad23f0a3ea802ecf00519674964",
+    "split": "valid_seen"
+  },
+  {
+    "index": 37,
+    "task_id": "json_2.1.1/valid_seen/pick_and_place_simple-SprayBottle-None-Cabinet-413/trial_T20190907_114931_692464/game.tw-pddl",
+    "seed": 2063,
+    "game_sha256": "e6b00102e73d63549e7320b6b420ce54738304e7abdd73f4e465ea56e988efe0",
+    "split": "valid_seen"
+  },
+  {
+    "index": 38,
+    "task_id": "json_2.1.1/valid_seen/pick_and_place_simple-SprayBottle-None-GarbageCan-409/trial_T20190908_054742_818364/game.tw-pddl",
+    "seed": 2064,
+    "game_sha256": "0eb158afdf090ec3e63b7789701df34768f2e68310dc6ae6645631372126e4d1",
+    "split": "valid_seen"
+  },
+  {
+    "index": 39,
+    "task_id": "json_2.1.1/valid_seen/pick_and_place_simple-SprayBottle-None-Toilet-415/trial_T20190909_075955_678702/game.tw-pddl",
+    "seed": 2065,
+    "game_sha256": "37d6a69dc84b49245c338bb987f114eb080717d06132e58df9bbff2e73bec648",
+    "split": "valid_seen"
+  },
+  {
+    "index": 40,
+    "task_id": "json_2.1.1/valid_seen/pick_and_place_simple-SprayBottle-None-Toilet-418/trial_T20190906_190942_706186/game.tw-pddl",
+    "seed": 2066,
+    "game_sha256": "62dba5a97d17369704502ac13d6d107af75be7b1d2b9618f54b35378db53c1dc",
+    "split": "valid_seen"
+  },
+  {
+    "index": 41,
+    "task_id": "json_2.1.1/valid_seen/pick_and_place_simple-TissueBox-None-Toilet-426/trial_T20190910_155319_795672/game.tw-pddl",
+    "seed": 2067,
+    "game_sha256": "83bb5b810904e7185ff34285e0a906d54a8d28d41e91d7cafbd59e36c99a5bc0",
+    "split": "valid_seen"
+  },
+  {
+    "index": 42,
+    "task_id": "json_2.1.1/valid_seen/pick_and_place_simple-ToiletPaper-None-ToiletPaperHanger-406/trial_T20190908_122858_883968/game.tw-pddl",
+    "seed": 2068,
+    "game_sha256": "00f2ef14e712efa54ef52fcd8dc64ed40790426fc0807beeaaa65a28555e774f",
+    "split": "valid_seen"
+  },
+  {
+    "index": 43,
+    "task_id": "json_2.1.1/valid_seen/pick_and_place_simple-ToiletPaper-None-ToiletPaperHanger-415/trial_T20190908_050518_595510/game.tw-pddl",
+    "seed": 2069,
+    "game_sha256": "c304c2b095e752efe63a1932d85f8b1deb3720381ce79f2d4fa0cfad6ce761e2",
+    "split": "valid_seen"
+  },
+  {
+    "index": 44,
+    "task_id": "json_2.1.1/valid_seen/pick_and_place_simple-Tomato-None-Microwave-13/trial_T20190908_124829_632660/game.tw-pddl",
+    "seed": 2070,
+    "game_sha256": "9fec628b9d29ee6c4c530747d18ad3116e9b9262ce4087d7c848fa0fd1556549",
+    "split": "valid_seen"
+  },
+  {
+    "index": 45,
+    "task_id": "json_2.1.1/valid_seen/pick_and_place_simple-Vase-None-CoffeeTable-207/trial_T20190909_091246_807206/game.tw-pddl",
+    "seed": 2071,
+    "game_sha256": "06f272f34641e4318a0f008229c1cec1be3420bad0c72b015ec023d270cc4306",
+    "split": "valid_seen"
+  },
+  {
+    "index": 46,
+    "task_id": "json_2.1.1/valid_seen/pick_and_place_simple-Watch-None-SideTable-222/trial_T20190909_051813_197569/game.tw-pddl",
+    "seed": 2072,
+    "game_sha256": "ba57ece5dce4aab31d82759533d099596eef14141e63b045c1eeee46504451cc",
+    "split": "valid_seen"
+  },
+  {
+    "index": 47,
+    "task_id": "json_2.1.1/valid_seen/pick_and_place_simple-WineBottle-None-Shelf-7/trial_T20190907_200154_378982/game.tw-pddl",
+    "seed": 2073,
+    "game_sha256": "f2726055a0e1c720aa06d32e79780928a34c2fa17dc019ad897eeeec33130867",
+    "split": "valid_seen"
+  },
+  {
+    "index": 48,
+    "task_id": "json_2.1.1/valid_seen/pick_clean_then_place_in_recep-ButterKnife-None-CounterTop-8/trial_T20190909_105559_983897/game.tw-pddl",
+    "seed": 2074,
+    "game_sha256": "6d8c41796613a39222ebdfd5e7781787b860f67ab0b3ac1eade00a862a06b9fa",
+    "split": "valid_seen"
+  },
+  {
+    "index": 49,
+    "task_id": "json_2.1.1/valid_seen/pick_clean_then_place_in_recep-ButterKnife-None-DiningTable-16/trial_T20190909_114508_617301/game.tw-pddl",
+    "seed": 2075,
+    "game_sha256": "c6f45775d4b4671e477f893e2a6008b6be7d2a37d749203a82eb90b80dbf3f6c",
+    "split": "valid_seen"
+  },
+  {
+    "index": 50,
+    "task_id": "json_2.1.1/valid_seen/pick_clean_then_place_in_recep-ButterKnife-None-Drawer-2/trial_T20190908_121728_511866/game.tw-pddl",
+    "seed": 2076,
+    "game_sha256": "48cf46fdd550666b3c64eabc60115e93f5bc561cf36d2aa7e7ec4cdcb069d527",
+    "split": "valid_seen"
+  },
+  {
+    "index": 51,
+    "task_id": "json_2.1.1/valid_seen/pick_clean_then_place_in_recep-ButterKnife-None-Drawer-30/trial_T20190908_052007_212776/game.tw-pddl",
+    "seed": 2077,
+    "game_sha256": "e7f693e73f0902d5ed810dd5666aa9f22018fb087fa2cf13ab107588b5350ef1",
+    "split": "valid_seen"
+  },
+  {
+    "index": 52,
+    "task_id": "json_2.1.1/valid_seen/pick_clean_then_place_in_recep-ButterKnife-None-Drawer-8/trial_T20190909_124425_112757/game.tw-pddl",
+    "seed": 2078,
+    "game_sha256": "6c9bd5157471dfbbc990907820d3cb5261fb66dcbff7859378abc9388091475b",
+    "split": "valid_seen"
+  },
+  {
+    "index": 53,
+    "task_id": "json_2.1.1/valid_seen/pick_clean_then_place_in_recep-Cloth-None-Cabinet-405/trial_T20190907_080903_889497/game.tw-pddl",
+    "seed": 2079,
+    "game_sha256": "6f170114135845d33f45767251398033da257100ca11e581bc00ce7ffb4cb741",
+    "split": "valid_seen"
+  },
+  {
+    "index": 54,
+    "task_id": "json_2.1.1/valid_seen/pick_clean_then_place_in_recep-Cloth-None-Drawer-423/trial_T20190908_140701_251653/game.tw-pddl",
+    "seed": 2080,
+    "game_sha256": "1cc01cb1ea97d8da9e2c7be07aae6ba32a68c9a44b2a6233747642f3e1224557",
+    "split": "valid_seen"
+  },
+  {
+    "index": 55,
+    "task_id": "json_2.1.1/valid_seen/pick_clean_then_place_in_recep-DishSponge-None-Cart-401/trial_T20190907_024634_972453/game.tw-pddl",
+    "seed": 2081,
+    "game_sha256": "5a98a7a9ece4dff7c192ecc31a9493ed0dae4a648f0b1e86d7f33650e5260397",
+    "split": "valid_seen"
+  },
+  {
+    "index": 56,
+    "task_id": "json_2.1.1/valid_seen/pick_clean_then_place_in_recep-DishSponge-None-CounterTop-403/trial_T20190908_144357_621068/game.tw-pddl",
+    "seed": 2082,
+    "game_sha256": "ae0ceef6da5a0fd46e2aa7a2f922243f6e6c11bf06478d8cd607b917709a5403",
+    "split": "valid_seen"
+  },
+  {
+    "index": 57,
+    "task_id": "json_2.1.1/valid_seen/pick_clean_then_place_in_recep-Fork-None-CounterTop-23/trial_T20190908_233922_171295/game.tw-pddl",
+    "seed": 2083,
+    "game_sha256": "035b75be5951f45b91c91431748cc738ae53045f744dd53d2fc6a7754329aca6",
+    "split": "valid_seen"
+  },
+  {
+    "index": 58,
+    "task_id": "json_2.1.1/valid_seen/pick_clean_then_place_in_recep-Fork-None-Drawer-8/trial_T20190908_132152_999725/game.tw-pddl",
+    "seed": 2084,
+    "game_sha256": "c9bc7762b4ac027579ee9dd1b35b1ee7afab6ea0f93b598f3b0bdac3c26b800b",
+    "split": "valid_seen"
+  },
+  {
+    "index": 59,
+    "task_id": "json_2.1.1/valid_seen/pick_clean_then_place_in_recep-Ladle-None-CounterTop-14/trial_T20190909_113844_191747/game.tw-pddl",
+    "seed": 2085,
+    "game_sha256": "4d22e431909cffcf2abb2710c2c76e7c2c214bb1dedd8b74392df5dca28a4e89",
+    "split": "valid_seen"
+  },
+  {
+    "index": 60,
+    "task_id": "json_2.1.1/valid_seen/pick_clean_then_place_in_recep-Ladle-None-CounterTop-8/trial_T20190909_121908_219603/game.tw-pddl",
+    "seed": 2086,
+    "game_sha256": "dfe0e2059ae96b84e7832c42e83c7824a7ce632b7ad4d698c6793fa2805b24ab",
+    "split": "valid_seen"
+  },
+  {
+    "index": 61,
+    "task_id": "json_2.1.1/valid_seen/pick_clean_then_place_in_recep-Ladle-None-DiningTable-16/trial_T20190909_183724_205399/game.tw-pddl",
+    "seed": 2087,
+    "game_sha256": "b1ecc9feeadd11664e8aa0494cd45e4c7b39365bf5362c61bf0f6cd80e52bc6b",
+    "split": "valid_seen"
+  },
+  {
+    "index": 62,
+    "task_id": "json_2.1.1/valid_seen/pick_clean_then_place_in_recep-Ladle-None-DiningTable-27/trial_T20190911_131350_027076/game.tw-pddl",
+    "seed": 2088,
+    "game_sha256": "b8ca47ea84683ab73c2d050aec566ad9816647cf2e96facc5121cd5e0ecda03b",
+    "split": "valid_seen"
+  },
+  {
+    "index": 63,
+    "task_id": "json_2.1.1/valid_seen/pick_clean_then_place_in_recep-Ladle-None-DiningTable-4/trial_T20190909_164840_568811/game.tw-pddl",
+    "seed": 2089,
+    "game_sha256": "4e4160b058e149953e1286ae25904b06642c6d4dece7b9b05b93f64e939a058f",
+    "split": "valid_seen"
+  },
+  {
+    "index": 64,
+    "task_id": "json_2.1.1/valid_seen/pick_clean_then_place_in_recep-Lettuce-None-CounterTop-16/trial_T20190909_051630_092360/game.tw-pddl",
+    "seed": 2090,
+    "game_sha256": "de4e7b405ac728899919093a8b7340f5ed185085f2e719a61fb53bc50a05a005",
+    "split": "valid_seen"
+  },
+  {
+    "index": 65,
+    "task_id": "json_2.1.1/valid_seen/pick_clean_then_place_in_recep-Lettuce-None-Fridge-19/trial_T20190908_100138_446072/game.tw-pddl",
+    "seed": 2091,
+    "game_sha256": "51821d5610d684690bec1232d1c3cc5b43fd8337cf694fc5606bf1faf86febef",
+    "split": "valid_seen"
+  },
+  {
+    "index": 66,
+    "task_id": "json_2.1.1/valid_seen/pick_clean_then_place_in_recep-Mug-None-CoffeeMachine-26/trial_T20190907_233056_022802/game.tw-pddl",
+    "seed": 2092,
+    "game_sha256": "f366616a4675098054e99418abbb95cc179e6648f47cb6056f4efd63c850887b",
+    "split": "valid_seen"
+  },
+  {
+    "index": 67,
+    "task_id": "json_2.1.1/valid_seen/pick_clean_then_place_in_recep-Plate-None-CounterTop-19/trial_T20190908_212725_836398/game.tw-pddl",
+    "seed": 2093,
+    "game_sha256": "7020ba5688368294a363b6b5d324a36545d43e15852834a0631060b5dcc0ded2",
+    "split": "valid_seen"
+  },
+  {
+    "index": 68,
+    "task_id": "json_2.1.1/valid_seen/pick_clean_then_place_in_recep-Plate-None-Fridge-5/trial_T20190909_112854_740612/game.tw-pddl",
+    "seed": 2094,
+    "game_sha256": "4fdd121c3f0b132bdb191d7c6c2238d87eedb56a5cf970e0aec8c4c3d9056113",
+    "split": "valid_seen"
+  },
+  {
+    "index": 69,
+    "task_id": "json_2.1.1/valid_seen/pick_clean_then_place_in_recep-SoapBar-None-Cabinet-402/trial_T20190908_055221_984342/game.tw-pddl",
+    "seed": 2095,
+    "game_sha256": "dbe6870e1e92af8813d5110ef345e2ca161f4c0e45da4218a273dada3ee38900",
+    "split": "valid_seen"
+  },
+  {
+    "index": 70,
+    "task_id": "json_2.1.1/valid_seen/pick_clean_then_place_in_recep-SoapBar-None-Drawer-423/trial_T20190906_202340_749336/game.tw-pddl",
+    "seed": 2096,
+    "game_sha256": "13ee51c3cc7e51b5edef36de961271662d613793d4fbdef1b087220212621b67",
+    "split": "valid_seen"
+  },
+  {
+    "index": 71,
+    "task_id": "json_2.1.1/valid_seen/pick_clean_then_place_in_recep-SoapBar-None-Toilet-410/trial_T20190906_201106_979461/game.tw-pddl",
+    "seed": 2097,
+    "game_sha256": "5de332286ca1fa87a26753e5a5d0c43444529b69b260806c4c43aedee3a60fde",
+    "split": "valid_seen"
+  },
+  {
+    "index": 72,
+    "task_id": "json_2.1.1/valid_seen/pick_clean_then_place_in_recep-SoapBar-None-Toilet-428/trial_T20190907_041436_588106/game.tw-pddl",
+    "seed": 2098,
+    "game_sha256": "018caad950b0f172f5cadddfdd32f790ccc855e93f470e04a9efb5c37ae5db7e",
+    "split": "valid_seen"
+  },
+  {
+    "index": 73,
+    "task_id": "json_2.1.1/valid_seen/pick_clean_then_place_in_recep-Spatula-None-DiningTable-4/trial_T20190909_002804_564168/game.tw-pddl",
+    "seed": 2099,
+    "game_sha256": "29c0dd8f6236e0c341f0bb1942e9535ed79715392a3ab74c248484244355899f",
+    "split": "valid_seen"
+  },
+  {
+    "index": 74,
+    "task_id": "json_2.1.1/valid_seen/pick_clean_then_place_in_recep-Tomato-None-CounterTop-25/trial_T20190909_012550_586494/game.tw-pddl",
+    "seed": 2100,
+    "game_sha256": "6a7df49f0e458ce17774438c7b1cc544032bea854ca2f8212a6bf1deeb0db55a",
+    "split": "valid_seen"
+  },
+  {
+    "index": 75,
+    "task_id": "json_2.1.1/valid_seen/pick_cool_then_place_in_recep-Apple-None-CounterTop-14/trial_T20190909_044933_815840/game.tw-pddl",
+    "seed": 2101,
+    "game_sha256": "bb44abba8c05ba976daaccfcd811ca543bfb51e1f79b7446bb3d9c02113ab037",
+    "split": "valid_seen"
+  },
+  {
+    "index": 76,
+    "task_id": "json_2.1.1/valid_seen/pick_cool_then_place_in_recep-Apple-None-GarbageCan-2/trial_T20190906_195943_081289/game.tw-pddl",
+    "seed": 2102,
+    "game_sha256": "99817ee79042a65b0e30ea17aaace6f1070d5fe7d3ca58853f722526a671fe88",
+    "split": "valid_seen"
+  },
+  {
+    "index": 77,
+    "task_id": "json_2.1.1/valid_seen/pick_cool_then_place_in_recep-Apple-None-Microwave-19/trial_T20190906_210937_878489/game.tw-pddl",
+    "seed": 2103,
+    "game_sha256": "29e1ed9c7781c5b7c3ba82b28545e4223021ba1009e13a364de17e6c41318a08",
+    "split": "valid_seen"
+  },
+  {
+    "index": 78,
+    "task_id": "json_2.1.1/valid_seen/pick_cool_then_place_in_recep-Apple-None-Microwave-5/trial_T20190908_150807_823817/game.tw-pddl",
+    "seed": 2104,
+    "game_sha256": "8f1e161555065ee0bc77db67d5f809b0377a8fb2c3972cd3833d03dd0b21f818",
+    "split": "valid_seen"
+  },
+  {
+    "index": 79,
+    "task_id": "json_2.1.1/valid_seen/pick_cool_then_place_in_recep-Bowl-None-Cabinet-20/trial_T20190909_112912_154874/game.tw-pddl",
+    "seed": 2105,
+    "game_sha256": "703a71ff3651b588f0bc7b682417fc0d2d90c91263920e2dfed2b730a021f83c",
+    "split": "valid_seen"
+  },
+  {
+    "index": 80,
+    "task_id": "json_2.1.1/valid_seen/pick_cool_then_place_in_recep-Bread-None-CounterTop-7/trial_T20190909_045605_307949/game.tw-pddl",
+    "seed": 2106,
+    "game_sha256": "f44e90d4370ec9174c95568baf3865d428af59c376c062679dd153adc008591a",
+    "split": "valid_seen"
+  },
+  {
+    "index": 81,
+    "task_id": "json_2.1.1/valid_seen/pick_cool_then_place_in_recep-Cup-None-Microwave-17/trial_T20190906_192817_654400/game.tw-pddl",
+    "seed": 2107,
+    "game_sha256": "4c58377775876b971aeec717b67e2b1a06d212644d75e5e7c673bea58925f682",
+    "split": "valid_seen"
+  },
+  {
+    "index": 82,
+    "task_id": "json_2.1.1/valid_seen/pick_cool_then_place_in_recep-Cup-None-SideTable-21/trial_T20190906_192823_237997/game.tw-pddl",
+    "seed": 2108,
+    "game_sha256": "549f5c1620ced92c35ca82a004e2c9aa4ad7bc6036af23fd597cf84bc68c2a0c",
+    "split": "valid_seen"
+  },
+  {
+    "index": 83,
+    "task_id": "json_2.1.1/valid_seen/pick_cool_then_place_in_recep-Egg-None-Microwave-24/trial_T20190908_234112_645480/game.tw-pddl",
+    "seed": 2109,
+    "game_sha256": "651fa7ad4578b010ad51325de3841689858ccd2c686cdef2ad45a994e7de5e53",
+    "split": "valid_seen"
+  },
+  {
+    "index": 84,
+    "task_id": "json_2.1.1/valid_seen/pick_cool_then_place_in_recep-Lettuce-None-CounterTop-1/trial_T20190908_042713_075616/game.tw-pddl",
+    "seed": 2110,
+    "game_sha256": "7be5e6699b9d2956287fd757f79a9e0bd25acf90a4c197afdb9a5cf6fd083531",
+    "split": "valid_seen"
+  },
+  {
+    "index": 85,
+    "task_id": "json_2.1.1/valid_seen/pick_cool_then_place_in_recep-Lettuce-None-CounterTop-11/trial_T20190908_222555_651605/game.tw-pddl",
+    "seed": 2111,
+    "game_sha256": "a1502712276d5bd70fa4cb887f6dac488d4843c18c2875abdd82f172134fd9ba",
+    "split": "valid_seen"
+  },
+  {
+    "index": 86,
+    "task_id": "json_2.1.1/valid_seen/pick_cool_then_place_in_recep-Mug-None-CoffeeMachine-16/trial_T20190908_184242_348366/game.tw-pddl",
+    "seed": 2112,
+    "game_sha256": "f36b5d1f54e8d59ccaa497e5cc2e9c86382790c59fd22779d108ab8458d6dafb",
+    "split": "valid_seen"
+  },
+  {
+    "index": 87,
+    "task_id": "json_2.1.1/valid_seen/pick_cool_then_place_in_recep-Pan-None-DiningTable-7/trial_T20190908_232648_241836/game.tw-pddl",
+    "seed": 2113,
+    "game_sha256": "83899711d6dd0972eccf2921e93c4cea1fb2c62efe5c86da9c7b52897083dfe5",
+    "split": "valid_seen"
+  },
+  {
+    "index": 88,
+    "task_id": "json_2.1.1/valid_seen/pick_cool_then_place_in_recep-Pan-None-StoveBurner-18/trial_T20190906_181023_216915/game.tw-pddl",
+    "seed": 2114,
+    "game_sha256": "5d654e39616ee7b7b0b26327ee88a9466c9f041d2cabbbe73456368dd7815818",
+    "split": "valid_seen"
+  },
+  {
+    "index": 89,
+    "task_id": "json_2.1.1/valid_seen/pick_cool_then_place_in_recep-Pan-None-StoveBurner-23/trial_T20190906_215856_374127/game.tw-pddl",
+    "seed": 2115,
+    "game_sha256": "f11af65a2d438e2e7c4aee1b42ca45ff58e2487c849f81b954c8aaa00a3b217f",
+    "split": "valid_seen"
+  },
+  {
+    "index": 90,
+    "task_id": "json_2.1.1/valid_seen/pick_cool_then_place_in_recep-Plate-None-Cabinet-27/trial_T20190906_173120_350651/game.tw-pddl",
+    "seed": 2116,
+    "game_sha256": "a95f7eadf81e51d3acf35913312acddaf0df3b8e2b3f43f6618b3fb9f4914009",
+    "split": "valid_seen"
+  },
+  {
+    "index": 91,
+    "task_id": "json_2.1.1/valid_seen/pick_cool_then_place_in_recep-Plate-None-Cabinet-7/trial_T20190907_231206_512424/game.tw-pddl",
+    "seed": 2117,
+    "game_sha256": "8020fdb9dab1e6cc4b9cc59826e0d5fdb06aed127839fdc19995f05bf6aeb3d5",
+    "split": "valid_seen"
+  },
+  {
+    "index": 92,
+    "task_id": "json_2.1.1/valid_seen/pick_cool_then_place_in_recep-Plate-None-CounterTop-1/trial_T20190906_205324_559361/game.tw-pddl",
+    "seed": 2118,
+    "game_sha256": "77746e2554d39aec907ca93ed7a20623b636ce0fdbd7d7e12460b4a5d09c1800",
+    "split": "valid_seen"
+  },
+  {
+    "index": 93,
+    "task_id": "json_2.1.1/valid_seen/pick_cool_then_place_in_recep-Pot-None-DiningTable-21/trial_T20190909_004531_429065/game.tw-pddl",
+    "seed": 2119,
+    "game_sha256": "92da4f852fece0e1f0943d4ea645e94eb15607144b670c669dc207071281c904",
+    "split": "valid_seen"
+  },
+  {
+    "index": 94,
+    "task_id": "json_2.1.1/valid_seen/pick_cool_then_place_in_recep-Tomato-None-CounterTop-12/trial_T20190909_063754_216554/game.tw-pddl",
+    "seed": 2120,
+    "game_sha256": "9f61e87a307c51613888e43c1c3c6a7fcb8fdf26b2c43eccdf55c3e7ef3c2412",
+    "split": "valid_seen"
+  },
+  {
+    "index": 95,
+    "task_id": "json_2.1.1/valid_seen/pick_cool_then_place_in_recep-Tomato-None-CounterTop-12/trial_T20190909_063844_274181/game.tw-pddl",
+    "seed": 2121,
+    "game_sha256": "3f97d0b88351bfe1f5078e4a384b34bd67ac273c6a08214c37d005351b274287",
+    "split": "valid_seen"
+  },
+  {
+    "index": 96,
+    "task_id": "json_2.1.1/valid_seen/pick_cool_then_place_in_recep-Tomato-None-GarbageCan-6/trial_T20190909_082934_483899/game.tw-pddl",
+    "seed": 2122,
+    "game_sha256": "25ca20a603bcc502f372bb684ca7e11735e915c854b5b14e53f53fa933749424",
+    "split": "valid_seen"
+  },
+  {
+    "index": 97,
+    "task_id": "json_2.1.1/valid_seen/pick_cool_then_place_in_recep-Tomato-None-Microwave-13/trial_T20190910_173916_331859/game.tw-pddl",
+    "seed": 2123,
+    "game_sha256": "56fc483b5b5cd33c3fd3c0009b88f515d472b3ee29e86e3190a0292bb4b8fe12",
+    "split": "valid_seen"
+  },
+  {
+    "index": 98,
+    "task_id": "json_2.1.1/valid_seen/pick_cool_then_place_in_recep-Tomato-None-Microwave-18/trial_T20190909_012524_159092/game.tw-pddl",
+    "seed": 2124,
+    "game_sha256": "6d18fc51e5665ba3e41fd095ed04110a6d3897fc510986404b1d254a88caa550",
+    "split": "valid_seen"
+  },
+  {
+    "index": 99,
+    "task_id": "json_2.1.1/valid_seen/pick_cool_then_place_in_recep-WineBottle-None-DiningTable-17/trial_T20190908_024426_412044/game.tw-pddl",
+    "seed": 2125,
+    "game_sha256": "e311eb061e08158bdc0d618ddc73c02df0c83f6a6d5d3291ec00796b42c0b55d",
+    "split": "valid_seen"
+  },
+  {
+    "index": 100,
+    "task_id": "json_2.1.1/valid_seen/pick_heat_then_place_in_recep-Apple-None-DiningTable-26/trial_T20190907_060234_011675/game.tw-pddl",
+    "seed": 2126,
+    "game_sha256": "55a08390f99c41014c2c0077dee730f552019a66bcd30a1c54e2f377d4cacb05",
+    "split": "valid_seen"
+  },
+  {
+    "index": 101,
+    "task_id": "json_2.1.1/valid_seen/pick_heat_then_place_in_recep-Cup-None-Cabinet-22/trial_T20190907_173251_960848/game.tw-pddl",
+    "seed": 2127,
+    "game_sha256": "d3d93026429d6f414454335789167f5b64ee1edfb60eb63001170a37aacaf2dd",
+    "split": "valid_seen"
+  },
+  {
+    "index": 102,
+    "task_id": "json_2.1.1/valid_seen/pick_heat_then_place_in_recep-Egg-None-CounterTop-2/trial_T20190908_122951_021026/game.tw-pddl",
+    "seed": 2128,
+    "game_sha256": "84f80a3ce2bd94d3651a4faa8d6225dff5721c65914ef77d32679307fa35770f",
+    "split": "valid_seen"
+  },
+  {
+    "index": 103,
+    "task_id": "json_2.1.1/valid_seen/pick_heat_then_place_in_recep-Egg-None-Fridge-14/trial_T20190909_091314_636733/game.tw-pddl",
+    "seed": 2129,
+    "game_sha256": "79589b4cb4c283bfb476adf242a3e0b8e9a99e4e48824b24c9ed506278cd10b1",
+    "split": "valid_seen"
+  },
+  {
+    "index": 104,
+    "task_id": "json_2.1.1/valid_seen/pick_heat_then_place_in_recep-Mug-None-Cabinet-26/trial_T20190909_062333_424779/game.tw-pddl",
+    "seed": 2130,
+    "game_sha256": "e3c51ab4071c631468b5aee7ca3e4c87a9c4cdd7942c5b1e9bba84d594e59b8d",
+    "split": "valid_seen"
+  },
+  {
+    "index": 105,
+    "task_id": "json_2.1.1/valid_seen/pick_heat_then_place_in_recep-Mug-None-Cabinet-3/trial_T20190909_014639_335717/game.tw-pddl",
+    "seed": 2131,
+    "game_sha256": "700b5716ab65490fcfac436b3a8f4c924e48c00318a85a10ff554c3be7b0f7c5",
+    "split": "valid_seen"
+  },
+  {
+    "index": 106,
+    "task_id": "json_2.1.1/valid_seen/pick_heat_then_place_in_recep-Mug-None-CoffeeMachine-1/trial_T20190907_222640_487432/game.tw-pddl",
+    "seed": 2132,
+    "game_sha256": "fdb422aca1ab22e69d6d001af2a6cce0886a5939eac9642b0a984ce16e9b6d9c",
+    "split": "valid_seen"
+  },
+  {
+    "index": 107,
+    "task_id": "json_2.1.1/valid_seen/pick_heat_then_place_in_recep-Mug-None-SideTable-21/trial_T20190909_090729_088825/game.tw-pddl",
+    "seed": 2133,
+    "game_sha256": "0885236e7eadd104c9744d3e60a4f87aab27a90f3dd22a1b778243008b330e10",
+    "split": "valid_seen"
+  },
+  {
+    "index": 108,
+    "task_id": "json_2.1.1/valid_seen/pick_heat_then_place_in_recep-Plate-None-Cabinet-1/trial_T20190908_070946_578973/game.tw-pddl",
+    "seed": 2134,
+    "game_sha256": "df06933c1c637c81d82b3f3101deb9843a0dc23cc431486abc05c14fcd906f55",
+    "split": "valid_seen"
+  },
+  {
+    "index": 109,
+    "task_id": "json_2.1.1/valid_seen/pick_heat_then_place_in_recep-Plate-None-DiningTable-28/trial_T20190908_001247_096796/game.tw-pddl",
+    "seed": 2135,
+    "game_sha256": "cbd03a1b862c9493348710a555366061ee9f95f4048287c32f90e3e6daf93b18",
+    "split": "valid_seen"
+  },
+  {
+    "index": 110,
+    "task_id": "json_2.1.1/valid_seen/pick_heat_then_place_in_recep-Potato-None-Fridge-11/trial_T20190909_011341_436523/game.tw-pddl",
+    "seed": 2136,
+    "game_sha256": "767a8fb0ffb31d17d4351e0782f5f9a1b165208e0bd0b2376a7f466f2b63be93",
+    "split": "valid_seen"
+  },
+  {
+    "index": 111,
+    "task_id": "json_2.1.1/valid_seen/pick_heat_then_place_in_recep-Potato-None-Fridge-12/trial_T20190908_014451_271080/game.tw-pddl",
+    "seed": 2137,
+    "game_sha256": "5ffda61ca5f7b6682eb49075d0f0d804e8d15f362b1f12fd9272517e018db4a6",
+    "split": "valid_seen"
+  },
+  {
+    "index": 112,
+    "task_id": "json_2.1.1/valid_seen/pick_heat_then_place_in_recep-Tomato-None-DiningTable-16/trial_T20190907_201243_698086/game.tw-pddl",
+    "seed": 2138,
+    "game_sha256": "12f767847da4c5153ef23e4f231017ebad886ad6d7fc584605fd3d50a831b17f",
+    "split": "valid_seen"
+  },
+  {
+    "index": 113,
+    "task_id": "json_2.1.1/valid_seen/pick_heat_then_place_in_recep-Tomato-None-Fridge-15/trial_T20190909_020200_054379/game.tw-pddl",
+    "seed": 2139,
+    "game_sha256": "3f2c507e54a810f81120b7811858109e838414291494aaa2ce0f1486e20c8c27",
+    "split": "valid_seen"
+  },
+  {
+    "index": 114,
+    "task_id": "json_2.1.1/valid_seen/pick_heat_then_place_in_recep-Tomato-None-Fridge-23/trial_T20190909_082320_103350/game.tw-pddl",
+    "seed": 2140,
+    "game_sha256": "2d3cb73d8f274ef626b6c8992f164438d78f351a5eaa771643d627106c39a09e",
+    "split": "valid_seen"
+  },
+  {
+    "index": 115,
+    "task_id": "json_2.1.1/valid_seen/pick_heat_then_place_in_recep-Tomato-None-Fridge-24/trial_T20190908_033721_967359/game.tw-pddl",
+    "seed": 2141,
+    "game_sha256": "52881a67407a92a0391a4fc19bb10e0029c76a0bb034494e761a7a7d01dd1b68",
+    "split": "valid_seen"
+  },
+  {
+    "index": 116,
+    "task_id": "json_2.1.1/valid_seen/pick_two_obj_and_place-AlarmClock-None-Dresser-305/trial_T20190907_165826_194855/game.tw-pddl",
+    "seed": 2142,
+    "game_sha256": "97981572521577bb234c3ccaea8726c794952290b798cbf7ec9b2e516d2ea3f4",
+    "split": "valid_seen"
+  },
+  {
+    "index": 117,
+    "task_id": "json_2.1.1/valid_seen/pick_two_obj_and_place-Book-None-Desk-302/trial_T20190906_181233_363875/game.tw-pddl",
+    "seed": 2143,
+    "game_sha256": "a032de7156b99bd2297a6df1d9382fa24c2c4986fd18ea25a8ef10cb15e77817",
+    "split": "valid_seen"
+  },
+  {
+    "index": 118,
+    "task_id": "json_2.1.1/valid_seen/pick_two_obj_and_place-Book-None-Desk-313/trial_T20190908_125930_920681/game.tw-pddl",
+    "seed": 2144,
+    "game_sha256": "ea2e6495fa3cecfa28ce61ed32df4cc7b0d74258ae89d4857e14379a29b324a1",
+    "split": "valid_seen"
+  },
+  {
+    "index": 119,
+    "task_id": "json_2.1.1/valid_seen/pick_two_obj_and_place-Box-None-CoffeeTable-213/trial_T20190906_200927_069627/game.tw-pddl",
+    "seed": 2145,
+    "game_sha256": "62aadd9e4beb1c48f1cde459d56b9287c4a4c647a59c8093487b3e3ed0d8eb82",
+    "split": "valid_seen"
+  },
+  {
+    "index": 120,
+    "task_id": "json_2.1.1/valid_seen/pick_two_obj_and_place-CD-None-Drawer-304/trial_T20190907_230232_832893/game.tw-pddl",
+    "seed": 2146,
+    "game_sha256": "22ece0c7c8a46fb385c7b02da3efabcc6164579f194211aeb237623236bcc54b",
+    "split": "valid_seen"
+  },
+  {
+    "index": 121,
+    "task_id": "json_2.1.1/valid_seen/pick_two_obj_and_place-CreditCard-None-Dresser-311/trial_T20190907_201917_045715/game.tw-pddl",
+    "seed": 2147,
+    "game_sha256": "fd0192a6279517b9fa4a9422e9b4ba43030da775a92654ca23704d66fa35d6bf",
+    "split": "valid_seen"
+  },
+  {
+    "index": 122,
+    "task_id": "json_2.1.1/valid_seen/pick_two_obj_and_place-CreditCard-None-Safe-323/trial_T20190907_001129_214240/game.tw-pddl",
+    "seed": 2148,
+    "game_sha256": "1f845d84c3c9a29d2498e442165b8f0ab7b3ceddad50ca6fc42313cafac5ece1",
+    "split": "valid_seen"
+  },
+  {
+    "index": 123,
+    "task_id": "json_2.1.1/valid_seen/pick_two_obj_and_place-Glassbottle-None-Shelf-1/trial_T20190907_122204_941737/game.tw-pddl",
+    "seed": 2149,
+    "game_sha256": "2a168d1d1654fe78ae7c2a9ef209a178b4641d17ba075dc77ab472f56051e57a",
+    "split": "valid_seen"
+  },
+  {
+    "index": 124,
+    "task_id": "json_2.1.1/valid_seen/pick_two_obj_and_place-Knife-None-Drawer-18/trial_T20190907_065232_689984/game.tw-pddl",
+    "seed": 2150,
+    "game_sha256": "b2ca7b329e56c4cabb44929490244d325ee0a48bec542b28ecfaf9fbdc5fd825",
+    "split": "valid_seen"
+  },
+  {
+    "index": 125,
+    "task_id": "json_2.1.1/valid_seen/pick_two_obj_and_place-Newspaper-None-Drawer-224/trial_T20190911_101248_326533/game.tw-pddl",
+    "seed": 2151,
+    "game_sha256": "d675ea576b4319cc8f87c90657121705377215ba565a63a6c3d296161813a29a",
+    "split": "valid_seen"
+  },
+  {
+    "index": 126,
+    "task_id": "json_2.1.1/valid_seen/pick_two_obj_and_place-Pan-None-CounterTop-14/trial_T20190907_012519_974044/game.tw-pddl",
+    "seed": 2152,
+    "game_sha256": "2527ef2801bc2f05aa593823c82b957d63993237d15849a5e16afb933754faf1",
+    "split": "valid_seen"
+  },
+  {
+    "index": 127,
+    "task_id": "json_2.1.1/valid_seen/pick_two_obj_and_place-RemoteControl-None-Ottoman-203/trial_T20190906_182952_858723/game.tw-pddl",
+    "seed": 2153,
+    "game_sha256": "dc82b56974574c518d0846090caa450094f86123b9c20a786041401c8e982d95",
+    "split": "valid_seen"
+  },
+  {
+    "index": 128,
+    "task_id": "json_2.1.1/valid_seen/pick_two_obj_and_place-SoapBar-None-GarbageCan-418/trial_T20190909_055538_380023/game.tw-pddl",
+    "seed": 2154,
+    "game_sha256": "f8de4ec83992a61fc4b738848b7039d1c7a86f1322a5445c5128089428d9c964",
+    "split": "valid_seen"
+  },
+  {
+    "index": 129,
+    "task_id": "json_2.1.1/valid_seen/pick_two_obj_and_place-SoapBar-None-GarbageCan-418/trial_T20190909_055649_717880/game.tw-pddl",
+    "seed": 2155,
+    "game_sha256": "e7fef3359e2d16f23d39c2afa041c34b96ff569b403337795f455a5f7fcf4b8b",
+    "split": "valid_seen"
+  },
+  {
+    "index": 130,
+    "task_id": "json_2.1.1/valid_seen/pick_two_obj_and_place-Spatula-None-Drawer-13/trial_T20190908_183331_203888/game.tw-pddl",
+    "seed": 2156,
+    "game_sha256": "b1a1dfb082a72753115127d553ff6e9d680470d7be6021fce230d63c8b630e8d",
+    "split": "valid_seen"
+  },
+  {
+    "index": 131,
+    "task_id": "json_2.1.1/valid_seen/pick_two_obj_and_place-SprayBottle-None-Cabinet-407/trial_T20190907_144556_144188/game.tw-pddl",
+    "seed": 2157,
+    "game_sha256": "4fc6a1ecda5638800cc874ab7cd06444af5864f0385a494cd80341263c4da9b4",
+    "split": "valid_seen"
+  },
+  {
+    "index": 132,
+    "task_id": "json_2.1.1/valid_seen/pick_two_obj_and_place-SprayBottle-None-GarbageCan-419/trial_T20190908_164236_518264/game.tw-pddl",
+    "seed": 2158,
+    "game_sha256": "804d324448334c2c3e3cf9cdd61d29296ebdc39573fc39ffba3f90dfda8d44d1",
+    "split": "valid_seen"
+  },
+  {
+    "index": 133,
+    "task_id": "json_2.1.1/valid_seen/pick_two_obj_and_place-SprayBottle-None-Toilet-402/trial_T20190910_222914_814642/game.tw-pddl",
+    "seed": 2159,
+    "game_sha256": "5d49c7eaa9655f60ad7106cad650c68be48afa047cac7c8a008396a0aeb712e5",
+    "split": "valid_seen"
+  },
+  {
+    "index": 134,
+    "task_id": "json_2.1.1/valid_seen/pick_two_obj_and_place-SprayBottle-None-Toilet-429/trial_T20190907_033843_707544/game.tw-pddl",
+    "seed": 2160,
+    "game_sha256": "8eff5d86460073fb6904eadce58b5aa6d93f20029c8391b8fa6c54e456effeac",
+    "split": "valid_seen"
+  },
+  {
+    "index": 135,
+    "task_id": "json_2.1.1/valid_seen/pick_two_obj_and_place-TissueBox-None-Toilet-426/trial_T20190909_044602_338962/game.tw-pddl",
+    "seed": 2161,
+    "game_sha256": "fbd4bb96af087d5e5dd5c0a17ed7aa299c80c46503cff727ca999b753758bcb7",
+    "split": "valid_seen"
+  },
+  {
+    "index": 136,
+    "task_id": "json_2.1.1/valid_seen/pick_two_obj_and_place-ToiletPaper-None-Drawer-423/trial_T20190907_111251_461099/game.tw-pddl",
+    "seed": 2162,
+    "game_sha256": "6473fe50acbac49c016b220932788b12c2d884b22351a9bbca57e764c0499dcc",
+    "split": "valid_seen"
+  },
+  {
+    "index": 137,
+    "task_id": "json_2.1.1/valid_seen/pick_two_obj_and_place-ToiletPaper-None-Toilet-408/trial_T20190909_080302_174780/game.tw-pddl",
+    "seed": 2163,
+    "game_sha256": "f4c5395a21b036b4ceb7ab142d166422fe64778cc8c54ea8124d71fdee6fa593",
+    "split": "valid_seen"
+  },
+  {
+    "index": 138,
+    "task_id": "json_2.1.1/valid_seen/pick_two_obj_and_place-Vase-None-Desk-204/trial_T20190906_181531_703961/game.tw-pddl",
+    "seed": 2164,
+    "game_sha256": "b87f5546c0369fd9e8c7a620915fad64d5829cb8a29989c56011da5bdb2471aa",
+    "split": "valid_seen"
+  },
+  {
+    "index": 139,
+    "task_id": "json_2.1.1/valid_seen/pick_two_obj_and_place-Watch-None-Dresser-205/trial_T20190907_182211_592010/game.tw-pddl",
+    "seed": 2165,
+    "game_sha256": "187a2946a3b1b5920de50a1a497d653b680d3113bc97a96fdf0c0f84ee4a7dd5",
+    "split": "valid_seen"
+  }
+]

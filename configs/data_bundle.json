@@ -1,0 +1,9 @@
+{
+  "path": "data/frozen_data.zip",
+  "sha256": "fb48f00c07d7583b566f1b1d009f168456982c49f37ff3aa843b1cad1e9ecad0",
+  "bytes": 14537132,
+  "source": "unchanged frozen Qwen2.5-3B Route-SFT samples",
+  "member_hashes": "configs/data.json",
+  "training_reannotation": false,
+  "sample_order_changed": false
+}
