@@ -246,8 +246,15 @@ class RouterProtocolTests(unittest.TestCase):
                 self.assertEqual(api_worker.AUTH_HEADERS['x-opencode-session'], 'unit-test-session')
                 self.assertEqual(api_worker.AUTH_HEADERS['x-opencode-org-id'], 'unit-test-org')
                 api_worker.save(file, {'token': 'dummy', 'session': 'invalid\r\nheader'})
+                # Atomic replacement creates a fresh inode. Restore the private
+                # fixture permissions before testing header validation on Linux.
+                file.chmod(0o600)
                 with self.assertRaisesRegex(RuntimeError, 'INVALID_API_HEADER'):
                     api_worker.read_auth(file)
+                if os.name != 'nt':
+                    file.chmod(0o644)
+                    with self.assertRaisesRegex(RuntimeError, 'AUTH_PERMISSIONS_TOO_OPEN'):
+                        api_worker.read_auth(file)
 
 
 @unittest.skipUnless(importlib.util.find_spec('torch') and (ROOT / '.deps/sdar/.rethink_setup.json').is_file(),
