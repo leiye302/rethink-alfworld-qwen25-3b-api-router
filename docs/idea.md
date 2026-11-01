@@ -9,7 +9,7 @@
 | RL 起点 | 完整 Route-SFT step2000 | 触发专用 SFT step2000 | 固定3B基模，无SFT |
 | Good SFT目标 | 自然原动作＋EOS | 不变 | 不做SFT |
 | Bad SFT目标 | marker＋纠正动作＋EOS | 只保留marker；无纠正动作/EOS | 不做SFT |
-| 局部hint选位 | Actor生成marker | Actor生成marker | 外置API判断H/R为Bad |
+| 局部hint选位 | Actor生成marker | Actor生成marker | 外置API回看整轨迹、逐步判断 reasoning 为Bad |
 | 局部hint接收者 | 仅Teacher | 不变 | 不变 |
 | 部署/评测 | Actor独立行动 | 不变 | 不变，无API |
 
@@ -60,7 +60,9 @@ set +a
 
 ALFWORLD_DATA下须包含 `json_2.1.1` 和 `logic`，训练环境应枚举到3553个训练游戏。程序核验seen140每个game文件SHA；版本不符会报错，不会悄悄换任务。
 
-API的局部hint模型/格式固定在原方法patch中；当前为glm-5.3-flash JSON协议。外置路由模型见opsd.yaml。端点需支持相应模型、JSON与reasoning_effort=low。使用自己的服务额度；准备/CPU检查不付费。训练请求含任务/轨迹内容，运行者应确认可以发送到该提供商。没有自动费用上限。
+外置组使用 `src/opsd/router_protocol.py` 的整轨迹标签＋hint JSON协议，模型为glm-5.3-flash，设置见opsd.yaml。端点需支持相应模型、JSON与reasoning_effort=low。使用自己的服务额度；准备/CPU检查不发API。训练请求含完整任务/轨迹，运行者应确认可以发送到该提供商。没有自动费用上限。
+
+若使用 OpenCode Go，可将 `RETHINK_API_ENDPOINT` 设为 `https://opencode.ai/inference/go/openai/v1/chat/completions`，并按自己账号的配置提供可选 `RETHINK_API_ORG_ID`。这些值来自运行者自己的账号，不包含在仓库。`RETHINK_API_SESSION` 可选；未指定时会为运行创建持久私有会话标识，恢复后复用。程序使用真实的 `rethink-external-router` User-Agent，拒绝重定向，不自动换提供商。默认遵从机器代理；只有代理妨碍HTTPS POST时才在自己的配置设置 `RETHINK_API_TRUST_ENV=false`。
 
 ## 3. 先检查再占卡
 
@@ -100,7 +102,7 @@ OPSD每10次更新验证、每20次保存，最近两份完整断点和最终upd
 bash scripts/reproduce.sh --run --allow-api-cost --resume
 ```
 
-锁和阶段状态保存在runs/ablation；不会盲目重启或覆盖半写目录。SFT第一个500步之前若无完整断点不能假装续训。API transport/额度错误与不合格提示区分：75/76保留同一rollout等待重试，完整输出缓存可复用；合法uncertain或校验不通过的hint只回退普通静态skill Teacher。损坏缓存/身份不符等完整性错误停止并保留证据。
+锁和阶段状态保存在runs/ablation；不会盲目重启或覆盖半写目录。SFT第一个500步之前若无完整断点不能假装续训。API transport/额度错误与不合格提示区分：75/76保留同一rollout等待重试，完整输出缓存可复用；合法uncertain或校验不通过的hint只回退普通静态skill Teacher。损坏缓存/身份不符等完整性错误停止并保留证据。整轨迹协议与旧的逐步审核不同，升级后须新建运行目录；代码、配置和source binding不匹配时会拒绝静默恢复。
 
 ## 5. 无API的同任务评测
 
@@ -120,3 +122,33 @@ RETHINK率是含marker的**决策步占比**，不是token占比，也不等于�
 API组是整体替代对照：没有SFT、reference anchor也改成base。只教触发组保持同样SFT样本和局部marker权重，但减少纠正监督。总loss/总训练成本差异应如实报告；不能用这两组单独证明router、hint或初始化的纯因果贡献。
 
 发布时只用 `python src/tools/package.py --out new-source.zip` 白名单打包，不压缩整个工作目录。API缓存、rollout、auth、训练状态和本地模型不上传Git。许可证与公开依赖见docs/related_work.md。
+
+## 7. 外置审核的整轨迹协议
+
+默认协议为 `external_hindsight_episode_router_v2`，不是逐 H/R 的在线因果裁判。一次 rollout 完成后：
+
+```text
+原始 task + 全部 reasoning/action + 实际 observation/feedback
+  → 本地只读整理：步骤ID、行动前状态、精确允许动作字典
+  → 每条唯一轨迹一次 API：所有标签 + Bad 引文/短 hint
+  → 引文不属于本段 R / 无有效 R → uncertain，普通 Teacher
+  → Bad hint 被拒绝 → 同轨迹集中补一次，只修 hint、不改标签
+  → 仍被拒绝 → 保留 Bad 标签，但用普通静态 skill Teacher
+  → 当前 Actor 的无梯度 Teacher 评分原采样 token；整轨迹照常 GRPO
+```
+
+合并命令字典只是无损压缩：API 返回 command_id，本地还原成该步真实允许动作，不会替 Actor 执行它。Good/uncertain 不得带 hint。Bad 必须给本段 R 的原文短引文；一段后续 reasoning 修好了先前错误，不会追溯性地把先前步骤判 Good，但本段已经自行修复的错误不判 Bad。未能直接推进、探索失败、动作错误和最终任务失败均不是单独的 Bad 判据。
+
+部分 hint 目标保护是保守过滤，不是新的路由损失：目标物品放到错误容器、未完成要求的变换却直接递交、可直接拾取目标却先空手离开去变换等会触发补请求。它不能穷尽所有语义错误，也可能拒绝某些合法暂存计划；只影响是否额外给 Teacher hint，不改 action 或标签。代码不会声称机器校验通过就代表成功纠错。
+
+若一批有 T 条唯一轨迹，其中 K 条需要补 hint，正常情况下成功的逻辑请求数为：
+
+```math
+N_{\mathrm{API}}=T+K,\qquad 0\le K\le T.
+```
+
+网络失败重试还会增加实际HTTP尝试数，不能把上述式子当费用上限。重复完整轨迹走内容缓存，读缓存不重复计入本次新调用 tokens/费用；提示词、代码、模型、端点或轨迹变更均会改变身份绑定。若发生传输/认证/额度错误，已成功请求的缓存保留，仍持有同一未更新 Actor/batch，再重试缺失请求，不重新采集 rollout 也不伪造 Good。
+
+JSON截断、重复key、缺step等内容错误显式记录为 uncertain/fallback；不声称为正常准确判断。输出上限按轨迹长度动态设置为 `min(14000,1024+224*n_steps)`；补 hint 按待补位置数设置。原 Actor 在线每步512token预算、50步交互上限、history2以及评测协议完全不因此增加。日志保留原Actor marker率、external-Bad率、hint拒绝原因、补请求次数和新调用用量，不混合这几个口径。
+
+本版本做过小规模真实API协议/传输检查，但不是全面标签校准、CUDA实测或强化学习结果。该示例仅适配 ALFWorld，不能把它当成已验证的 WebShop/SearchQA 标签器。仓库不包含私人API请求、完整轨迹、账号标识或用量回执。

@@ -68,7 +68,9 @@ def audit(check_framework=False):
     if external:
         router=opsd['algorithm']['external_router']
         assert router==dict(enabled=True,model='glm-5.3-flash',
-            run_root='${trainer.default_local_dir}/external_router',concurrency=4,max_new_tokens=384,
+            protocol='external_hindsight_episode_router_v2',granularity='full_episode',
+            run_root='${trainer.default_local_dir}/external_router',concurrency=4,max_new_tokens=14000,
+            tokens_per_step=224,base_output_tokens=1024,
             temperature=0.,invalid_reasoning_policy='uncertain',evaluation_enabled=False,api_auth_file=None)
     else:assert not opsd['algorithm'].get('external_router',{}).get('enabled',False)
     allowed_sources=set() if external else {'src/sft/route_bce/core.py','src/sft/route_bce/preflight.py'}

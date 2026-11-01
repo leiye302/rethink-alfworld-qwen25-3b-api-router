@@ -21,9 +21,13 @@ algorithm:
   external_router:
     enabled: true
     model: glm-5.3-flash
+    protocol: external_hindsight_episode_router_v2
+    granularity: full_episode
     run_root: ${trainer.default_local_dir}/external_router
     concurrency: 4
-    max_new_tokens: 384
+    max_new_tokens: 14000
+    tokens_per_step: 224
+    base_output_tokens: 1024
     temperature: 0.0
     invalid_reasoning_policy: uncertain
     evaluation_enabled: false

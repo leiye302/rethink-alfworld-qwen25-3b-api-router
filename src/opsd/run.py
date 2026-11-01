@@ -1,5 +1,5 @@
 """Explicit foreground launch. Credentials never enter Hydra config or command line."""
-import argparse, json, os
+import argparse, json, os, uuid
 from pathlib import Path
 import sys
 ROOT=Path(__file__).resolve().parents[2]
@@ -39,8 +39,13 @@ def main():
         validate_endpoint(os.environ['RETHINK_API_ENDPOINT'])
         private=run/'private';private.mkdir(exist_ok=True,mode=0o700)
         path=private/'api_auth.json'
+        previous=json.loads(path.read_text(encoding='utf-8')) if path.exists() else {}
+        auth={'token':token,
+              'session':os.environ.pop('RETHINK_API_SESSION',None) or previous.get('session') or 'rethink-'+uuid.uuid4().hex}
+        org=os.environ.pop('RETHINK_API_ORG_ID',None) or previous.get('org_id')
+        if org:auth['org_id']=org
         fd=os.open(path,os.O_WRONLY|os.O_CREAT|os.O_TRUNC,0o600)
-        with os.fdopen(fd,'w') as f:json.dump({'token':token},f)
+        with os.fdopen(fd,'w') as f:json.dump(auth,f)
         path.chmod(0o600)
         # The CPU worker reads this private file; Ray/Hydra must not serialize
         # the key as a runtime-environment value or expose it in config logs.

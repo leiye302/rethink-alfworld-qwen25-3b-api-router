@@ -5,7 +5,8 @@
   "base_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
   "sft_enabled": false,
   "opsd_initialization": "pinned_base_without_Route_SFT",
-  "teacher_hint_route": "external_H_R_API",
+  "teacher_hint_route": "external_full_episode_reasoning_API",
+  "judge_information": "training_only_complete_rollout_hindsight",
   "API_at_evaluation": false,
   "mother_repository": "https://github.com/leiye302/rethink-alfworld-qwen25-1.5b",
   "mother_commit": "93e1341ffab835c21ed622ac80793fc1fb7f1487",
@@ -13,5 +14,7 @@
   "science_reference": "configs/reference_3b.json",
   "GPU_training_executed": false,
   "API_quality_calibrated": false,
-  "paid_API_calls_during_preparation": 0
+  "API_protocol_pilot_executed": true,
+  "automatic_API_calls_during_setup": false,
+  "private_API_receipts_published": false
 }

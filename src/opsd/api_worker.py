@@ -6,12 +6,30 @@ transport/auth failures hold the batch rather than silently dropping hints.
 """
 import argparse
 from concurrent.futures import ThreadPoolExecutor, as_completed
-import hashlib, http.client, importlib.util, json, os, time
+import hashlib, http.client, importlib.util, json, os, time, uuid
 from pathlib import Path
 import urllib.error, urllib.parse, urllib.request
 
 ROOT=Path(__file__).resolve().parents[2]
 protocol=None
+AUTH_HEADERS={'User-Agent':'rethink-external-router/2.0', 'x-opencode-session':'rethink-'+uuid.uuid4().hex}
+
+
+def read_auth(path):
+    path=Path(path)
+    if os.name!='nt' and path.stat().st_mode&0o077:
+        raise RuntimeError('AUTH_PERMISSIONS_TOO_OPEN')
+    value=json.loads(path.read_text(encoding='utf-8'))
+    token=value.get('token')
+    if not isinstance(token,str) or not token.strip() or any(c in token for c in '\r\n'):
+        raise RuntimeError('INVALID_API_AUTH')
+    for field,header in [('session','x-opencode-session'),('org_id','x-opencode-org-id')]:
+        item=value.get(field)
+        if item is not None:
+            if not isinstance(item,str) or not item.strip() or len(item)>200 or any(c in item for c in '\r\n'):
+                raise RuntimeError('INVALID_API_HEADER')
+            AUTH_HEADERS[header]=item
+    return token
 
 def load_protocol():
     global protocol
@@ -40,13 +58,16 @@ class NoRedirect(urllib.request.HTTPRedirectHandler):
     def redirect_request(self,*args,**kwargs):raise RuntimeError('API_REDIRECT_REFUSED')
 
 def request_json(body,token,endpoint):
-    """Unchanged native transport, shared by hint and reasoning-only judge."""
-    opener=urllib.request.build_opener(NoRedirect)
+    """HTTPS transport with honest identification and stable private session."""
+    handlers=[NoRedirect]
+    if os.environ.get('RETHINK_API_TRUST_ENV','true').lower() in {'0','false','no'}:
+        handlers.append(urllib.request.ProxyHandler({}))
+    opener=urllib.request.build_opener(*handlers)
     data=json.dumps(body,ensure_ascii=False).encode()
     for attempt in range(6):
         try:
             request=urllib.request.Request(endpoint,data=data,headers={
-                'Authorization':'Bearer '+token,'Content-Type':'application/json'},method='POST')
+                **AUTH_HEADERS,'Authorization':'Bearer '+token,'Content-Type':'application/json'},method='POST')
             with opener.open(request,timeout=180) as response:result=json.load(response)
             break
         except urllib.error.HTTPError as exc:
@@ -93,8 +114,7 @@ def main():
     a=p.parse_args()
     endpoint=validate_endpoint(os.environ.get('RETHINK_API_ENDPOINT',''))
     load_protocol()
-    if os.name!='nt' and a.auth.stat().st_mode&0o077:raise RuntimeError('AUTH_PERMISSIONS_TOO_OPEN')
-    token=json.loads(a.auth.read_text())['token']
+    token=read_auth(a.auth)
     payload=json.loads(a.request.read_text());groups=protocol.group_requests(payload['requests'])
     if payload.get('route_source')=='external_api':
         for group in groups:group['route_source']='external_api'

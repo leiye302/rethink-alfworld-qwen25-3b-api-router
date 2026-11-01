@@ -73,6 +73,7 @@ class PortabilityTests(unittest.TestCase):
                 ('src/tools/check.py', []), ('src/tools/setup.py', ['--help']),
                 ('src/tools/plot.py', ['--help']),
                 ('src/tools/package.py', []), ('src/opsd/api_worker.py', ['--help']),
+                ('src/opsd/router_worker.py', ['--help']),
                 ('src/opsd/prepare.py', ['--help']), ('src/opsd/run.py', ['--help']),
                 ('src/tools/run_pair.py', ['--help']), ('src/tools/audit_recipe.py', []),
                 ('src/evaluation/run_seen140.py', ['--help']),

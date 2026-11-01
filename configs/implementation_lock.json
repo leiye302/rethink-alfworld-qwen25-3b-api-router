@@ -7,20 +7,21 @@
     "src/ablation.py": "10ce0852d321021d6f8a17a810ae5afb1a4dbf93953d463a34cdacfdda37f8cd",
     "src/evaluation/run_seen140.py": "9b64c6a43d1c9b498c96d0a1b4d0fb4233e0642c9840d3a9eef2fed262b4f076",
     "src/gpu_layout.py": "2e0266a7daee09fcc56ad7337b5d1831d599e27eb86990bf592c3a19c7151ac0",
-    "src/opsd/api_worker.py": "de59c3a0a8452f44e6df4b406395fff156ac5c68fa0b91098e3b4602e3271550",
+    "src/opsd/api_worker.py": "2074f0b1194d2131075f726606e3111a5df7d7f50b044a30219de1729bd39eea",
     "src/opsd/prepare.py": "e6e6b2c3f8609ed0d0269ab260e65689acf50f4f7faaf0cd5212fae41a97f972",
-    "src/opsd/router_protocol.py": "adb79740a367c958cfe2d6bb6ed9ec3fe9156a7c1bb6ef3a40f0c154171357bc",
-    "src/opsd/router_worker.py": "ff1578369701bf8b3ffea0878e94d48ca1418738981759a58e4276ae70d19d2d",
-    "src/opsd/run.py": "d159c15b15c2e32eac3b19071bcc50b31e76b70903ab44084fbfdf26ed3a0f7f",
+    "src/opsd/router_protocol.py": "80e77fcc23a1eeeea5544950b0e95ac2b325c0a2c52a5f3bc3d6ac962f85f6f0",
+    "src/opsd/router_worker.py": "bfea401666d4aa7f6055116b9d2ecf9eadbbc56f18c3aef95e0902086aac6b9c",
+    "src/opsd/run.py": "0e72ca91b6e1610bc255547025e3e26018055a3e34b9eb8bade87ad5e062d0d7",
     "src/sft/route_bce/__init__.py": "8f17e2c9811859857b48512213a5572749321f8bd35fa9437cbeea95ecedf2bc",
     "src/sft/route_bce/core.py": "634806f26c2f9a859523ead6707c89eb125c83715153d0dd48c6a204b07c119f",
     "src/sft/route_bce/distributed.py": "af9ced3346674960291d2119739d2fea9eebe8e3d31d818932915f2247e72716",
     "src/sft/route_bce/preflight.py": "90db3b6aa0fb990317c33e2b07e38adf7601e97fe009b2dcd94b5b8adeba9751",
-    "src/sft/route_bce/train.py": "e528d5d52bc25bf1ed203d67e8ae4c84df297a231c40088abb8ea68e117e7825"
+    "src/sft/route_bce/train.py": "e528d5d52bc25bf1ed203d67e8ae4c84df297a231c40088abb8ea68e117e7825",
+    "src/opsd/native_router.py": "262433570a7889c79620322ce1d43423432aec5f2615b40c65e592a82a32686a"
   },
   "native_sha256_lf": {
     "verl/trainer/ppo/rethink_local_hints.py": "e0f0cbef9ab92436952e90a608f01a6235c871a00328bdcb3e97906be430ab91",
     "agent_system/multi_turn_rollout/rollout_loop.py": "32a3df84904103471cfc64273b2bca7144b070de194e90877ba56c2c31770f09",
-    "verl/trainer/ppo/rethink_external_router.py": "85f3466b934d4139a165a5932780d7700f37add2522e20533c1b69dc12ec3692"
+    "verl/trainer/ppo/rethink_external_router.py": "262433570a7889c79620322ce1d43423432aec5f2615b40c65e592a82a32686a"
   }
 }
