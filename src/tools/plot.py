@@ -11,6 +11,7 @@ ROOT = Path(__file__).resolve().parents[2]
 FIELDS = ('method', 'initialization', 'updates', 'split', 'tasks', 'successes', 'success_rate')
 sys.path.insert(0,str(ROOT/'src'))
 from ablation import contract
+from evaluation.identity import require_seen140
 SPEC=contract()
 ARMS=(('Full RETHINK','Full-Route-SFT-step2000'),
       ('Trigger-only','Trigger-only-SFT-step2000') if SPEC['sft_enabled'] else
@@ -33,12 +34,12 @@ def validate_rows(rows):
 
 
 def rows_from_summaries(baseline, method):
-    expected_sha = hashlib.sha256((ROOT / 'configs/seen140_tasks.json').read_bytes()).hexdigest()
     rows = []
     for path, (name, initialization) in zip((baseline, method), ARMS):
         result = json.loads(Path(path).read_text(encoding='utf-8'))
-        if result.get('status') != 'passed' or result.get('task_manifest_sha256') != expected_sha:
+        if result.get('status') != 'passed':
             raise ValueError('Evaluation must be complete and use the pinned seen140 tasks and seeds.')
+        require_seen140(result, ROOT / 'configs/seen140_tasks.json')
         if result.get('analyzer_called') is not False or result.get('teacher_called') is not False:
             raise ValueError('Public evaluation must not use an Analyzer or Teacher.')
         if result.get('training_updates') != 0:

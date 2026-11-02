@@ -303,6 +303,8 @@ class AblationContractTests(unittest.TestCase):
         import run_pair
         from ablation import contract
         with patch.object(run_pair, 'sft_complete', return_value=False), \
+             patch.dict(os.environ, {'OPSD_PYTHON': sys.executable}), \
+             patch.object(run_pair, 'resolve_python', return_value=sys.executable), \
              patch.object(Path, 'exists', return_value=False):
             queue = run_pair.commands('opsd')
         expected=(['sft_preflight','sft'] if contract()['sft_enabled'] else [])+['training','export','evaluation']

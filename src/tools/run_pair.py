@@ -13,6 +13,7 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "src"))
 from gpu_layout import layout
 from ablation import contract
+from runtime_paths import resolve_python
 
 
 def sha(path):
@@ -52,7 +53,7 @@ def sft_complete():
 
 def commands(arm, resume=False):
     if arm!='opsd':raise ValueError('This repository runs only its declared ablation, not an extra baseline')
-    py = str(Path(os.environ.get("OPSD_PYTHON", ".venv-opsd/bin/python")).resolve())
+    py = resolve_python(os.environ.get("OPSD_PYTHON", ".venv-opsd/bin/python"), ROOT)
     result = []
     if contract()["sft_enabled"] and arm == "opsd" and not sft_complete():
         existing = ROOT / "checkpoints/route_sft"
